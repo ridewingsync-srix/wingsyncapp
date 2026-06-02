@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WingSync</title>
+  <meta name="description" content="WingSync helps riding squads coordinate active group rides with live ride visibility, squad status, and safety-first tools.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="WingSync home">
+      <img class="brand-icon" src="images/wing_sync_app_icon.png" alt="" aria-hidden="true">
+      <img class="brand-logo" src="images/wing_sync_text_logo.png" alt="WingSync">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="delete-account.html">Delete Account</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Ride coordination for active squads</p>
+        <h1>WingSync helps riders stay coordinated during group rides.</h1>
+        <p class="hero-copy">WingSync is built for active ride visibility, leader and rider coordination, formation awareness, and practical squad status without hidden tracking or exaggerated claims.</p>
+        <div class="hero-actions">
+          <a class="button" href="features.html">View Features</a>
+          <a class="button secondary" href="privacy-policy.html">Read Privacy Policy</a>
+        </div>
+      </div>
+      <div class="ride-visual" aria-label="Animated example group ride coordination map">
+        <img class="hero-app-icon" src="images/wing_sync_app_icon.png" alt="" aria-hidden="true">
+        <img class="hero-slash" src="images/wing_sync_slash.png" alt="" aria-hidden="true">
+        <div class="map-grid" aria-hidden="true"></div>
+        <div class="dark-map" aria-hidden="true">
+          <span class="map-road road-main"></span>
+          <span class="map-road road-main-alt"></span>
+          <span class="map-road road-cross-one"></span>
+          <span class="map-road road-cross-two"></span>
+          <span class="map-road road-local road-local-one"></span>
+          <span class="map-road road-local road-local-two"></span>
+          <span class="map-road road-local road-local-three"></span>
+          <span class="map-label label-north">Ridge Rd</span>
+          <span class="map-label label-east">Lake View</span>
+          <span class="map-label label-south">Bypass</span>
+        </div>
+        <div class="formation-radius" aria-hidden="true"></div>
+        <div class="route route-primary" aria-hidden="true"></div>
+        <div class="route route-secondary" aria-hidden="true"></div>
+        <div class="marker-track leader-track">
+          <img src="images/wingsync_leader_marker.gif" alt="Leader marker">
+        </div>
+        <div class="marker-track rider-track rider-one">
+          <img src="images/wingsync_rider_marker.gif" alt="Rider marker">
+        </div>
+        <div class="marker-track rider-track rider-two">
+          <img class="marker-live" src="images/wingsync_rider_marker.gif" alt="Rider marker">
+          <img class="marker-lost" src="images/wingsync_rider_marker_lost.png" alt="Lost rider last known marker">
+        </div>
+        <div class="ride-glass-card ride-code">
+          <span>Ride Code</span>
+          <strong>WS-284</strong>
+        </div>
+        <div class="ride-glass-card ride-status">
+          <span>Formation</span>
+          <strong class="status-copy status-healthy">Healthy formation</strong>
+          <strong class="status-copy status-oof">OOF - Out of Formation</strong>
+          <strong class="status-copy status-lost">Lost rider last known preserved</strong>
+        </div>
+        <div class="ride-glass-card lost-card">
+          <span>Rider lost</span>
+          <strong>Last known preserved</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>Built around real ride coordination</h2>
+      </div>
+      <div class="grid three">
+        <article class="card">
+          <h3>Live group context</h3>
+          <p>Riders can create or join active ride sessions using ride codes and understand where the active squad is during a ride.</p>
+        </article>
+        <article class="card">
+          <h3>Leader and rider roles</h3>
+          <p>WingSync supports coordination between the ride leader and participating riders so the group has a shared operational view.</p>
+        </article>
+        <article class="card">
+          <h3>Privacy-aware operation</h3>
+          <p>Active ride-only location sharing is intended only for riders participating in the same ride session.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Safety first</p>
+        <h2>Assistance, not a substitute for awareness</h2>
+      </div>
+      <p>WingSync is a coordination aid. Riders remain responsible for safe riding, traffic laws, road conditions, group etiquette, and their own decisions. Do not use a phone while riding or driving.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 WingSync. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="delete-account.html">Delete Account</a>
+    </nav>
+  </footer>
+</body>
+</html>
