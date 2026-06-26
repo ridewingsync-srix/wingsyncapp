@@ -1,10 +1,10 @@
-# WingSync Site
+# WingRadar Site
 
-This is the public WingSync website. It is a clean static HTML/CSS site suitable for GitHub Pages.
+This is the public WingRadar website. It is a clean static HTML/CSS site suitable for GitHub Pages.
 
 The site includes:
 
-- `index.html` - WingSync overview
+- `index.html` - WingRadar overview
 - `features.html` - Main app features
 - `privacy-policy.html` - Privacy policy
 - `terms.html` - Terms of use
@@ -35,4 +35,4 @@ GitHub will publish the static site and show the public Pages URL after deployme
 
 - Replace placeholder effective dates or publisher details if needed.
 - Do not add app source code, Firebase keys, API keys, secrets, package configs, analytics scripts, trackers, fonts, CDNs, or third-party embeds.
-- Host `privacy-policy.html` and `delete-account.html` publicly before submitting WingSync to app stores.
+- Host `privacy-policy.html` and `delete-account.html` publicly before submitting WingRadar to app stores.
