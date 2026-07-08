@@ -3,123 +3,335 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WingRadar</title>
-  <meta name="description" content="WingRadar helps riding squads coordinate active group rides with live ride visibility, squad status, and safety-first tools.">
-  <!-- TODO: Replace WingSync-branded favicon asset with a WingRadar version. -->
+  <title>WingRadar | Ride Together. Stay Together.</title>
+  <meta name="description" content="WingRadar helps ride leaders and participants stay connected during active group rides with live rider positions, shared route context, formation awareness, and ride history built for the road.">
   <link rel="icon" href="images/wing_sync_app_icon.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=20260602-hero-logo">
+  <link rel="stylesheet" href="style.css?v=20260709-arrow-heading">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="WingRadar home">
-      <!-- TODO: Replace WingSync-branded logo/icon assets with WingRadar versions. -->
+    <a class="brand" href="#top" aria-label="WingRadar home">
       <img class="brand-icon" src="images/wing_sync_app_icon.png" alt="" aria-hidden="true">
-      <img class="brand-logo" src="images/wing_sync_text_logo.png" alt="WingRadar">
+      <span class="brand-lockup">
+        <img class="brand-logo" src="images/wing_sync_text_logo.png" alt="WingRadar">
+        <span>RIDE TOGETHER. STAY TOGETHER.</span>
+      </span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Overview</a>
-      <a href="features.html">Features</a>
-      <a href="privacy-policy.html">Privacy</a>
-      <a href="terms.html">Terms of Use</a>
-      <a href="support.html">Support</a>
-      <a href="delete-account.html">Delete Account</a>
+      <a href="#why">Why WingRadar</a>
+      <a href="#features">Features</a>
+      <a href="#markers">Ride Markers</a>
+      <a href="#how">How It Works</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#preview">App Preview</a>
     </nav>
+    <a class="download-button" href="#download">Download App</a>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <!-- TODO: Replace WingSync-branded logo asset with a WingRadar version. -->
-        <img class="hero-brand-logo" src="images/wing_sync_text_logo.png" alt="WingRadar">
-        <p class="eyebrow">Ride coordination for active squads</p>
-        <h1>Ride together, stay coordinated.</h1>
-        <p class="hero-copy">WingRadar is built for active ride visibility, leader and rider coordination, formation awareness, and practical squad status without hidden tracking or exaggerated claims.</p>
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="badge">Convoy Coordination Platform</p>
+        <h1>Ride as One.<span>Arrive Together.</span></h1>
+        <p>WingRadar helps ride leaders and participants stay connected during active group rides with live rider positions, shared route context, formation awareness, and ride history built for the road.</p>
         <div class="hero-actions">
-          <a class="button" href="features.html">View Features</a>
-          <a class="button secondary" href="privacy-policy.html">Read Privacy Policy</a>
+          <a class="primary-action" href="#download"><span class="play-dot"></span>Get WingRadar</a>
+          <a class="secondary-action" href="#features">Explore Features <span aria-hidden="true">›</span></a>
+        </div>
+        <div class="trust-row" aria-label="WingRadar highlights">
+          <span>Built for real rides</span>
+          <span>Live awareness</span>
+          <span>Group coordination</span>
         </div>
       </div>
-      <div class="ride-visual" aria-label="Animated example group ride coordination map">
-        <!-- TODO: Replace WingSync-branded hero icon/slash assets with WingRadar versions. -->
-        <img class="hero-app-icon" src="images/wing_sync_app_icon.png" alt="" aria-hidden="true">
-        <img class="hero-slash" src="images/wing_sync_slash.png" alt="" aria-hidden="true">
-        <div class="map-grid" aria-hidden="true"></div>
-        <div class="dark-map" aria-hidden="true">
-          <span class="map-road road-main"></span>
-          <span class="map-road road-main-alt"></span>
-          <span class="map-road road-cross-one"></span>
-          <span class="map-road road-cross-two"></span>
-          <span class="map-road road-local road-local-one"></span>
-          <span class="map-road road-local road-local-two"></span>
-          <span class="map-road road-local road-local-three"></span>
-          <span class="map-label label-north">Ridge Rd</span>
-          <span class="map-label label-east">Lake View</span>
-          <span class="map-label label-south">Bypass</span>
-        </div>
-        <div class="formation-radius" aria-hidden="true"></div>
-        <div class="route route-primary" aria-hidden="true"></div>
-        <div class="route route-secondary" aria-hidden="true"></div>
-        <div class="marker-track leader-track">
-          <img src="images/wingsync_leader_marker.gif" alt="Leader marker">
-        </div>
-        <div class="marker-track rider-track rider-one">
-          <img src="images/wingsync_rider_marker.gif" alt="Rider marker">
-        </div>
-        <div class="marker-track rider-track rider-two">
-          <img class="marker-live" src="images/wingsync_rider_marker.gif" alt="Rider marker">
-          <img class="marker-lost" src="images/wingsync_rider_marker_lost.png" alt="Lost rider last known marker">
-        </div>
-        <div class="ride-glass-card ride-code">
-          <span>Ride Code</span>
-          <strong>WR-284</strong>
-        </div>
-        <div class="ride-glass-card ride-status">
-          <span>Formation</span>
-          <strong class="status-copy status-healthy">Healthy formation</strong>
-          <strong class="status-copy status-oof">OOF - Out of Formation</strong>
-          <strong class="status-copy status-lost">Lost rider last known preserved</strong>
+
+      <div class="hero-map" aria-label="Top-view live ride map mockup">
+        <div class="map-card">
+          <div class="map-grid" aria-hidden="true"></div>
+          <svg class="hero-route-map" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <defs>
+              <marker id="routeArrowMarker" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="3.6" markerHeight="3.6" markerUnits="userSpaceOnUse" orient="auto">
+                <path class="route-arrow-head" d="M0 0 L8 4 L0 8 L2.2 4 Z" />
+              </marker>
+            </defs>
+            <path class="hero-road-path" d="M49 96 C43 82 31 72 36 58 C41 43 61 51 66 36 C70 24 58 18 51 7" />
+            <path class="hero-route-path" d="M49 96 C43 82 31 72 36 58 C41 43 61 51 66 36 C70 24 58 18 51 7" />
+            <polyline class="hero-route-arrows" points="49.0,96.0 47.8,93.4 46.5,90.9 45.1,88.5 43.7,86.1 42.3,83.8 40.9,81.5 39.6,79.3 38.4,77.0 37.3,74.7 36.3,72.5 35.6,70.2 35.1,67.9 34.8,65.5 34.9,63.1 35.3,60.6 36.0,58.0 36.9,55.8 38.0,54.0 39.4,52.4 40.9,51.2 42.5,50.1 44.3,49.2 46.1,48.5 48.1,47.9 50.0,47.3 52.0,46.7 53.9,46.1 55.9,45.5 57.7,44.8 59.5,43.9 61.1,42.8 62.6,41.6 64.0,40.0 65.1,38.2 66.0,36.0 66.6,33.7 66.8,31.5 66.6,29.4 66.2,27.5 65.4,25.6 64.5,23.8 63.3,22.0 61.9,20.3 60.5,18.5 58.9,16.7 57.3,14.9 55.6,13.1 54.0,11.2 52.5,9.1 51.0,7.0" />
+            <path class="hero-lost-path" d="M61 51 C73 55 79 62 88 70" />
+          </svg>
+          <span class="route-arrow arrow-branch">›</span>
+          <span class="formation-radius"></span>
+
+          <div class="ride-chip active-chip">
+            <span>Active Ride</span>
+            <strong>RID 483927</strong>
+            <em>Ridge Loop</em>
+          </div>
+
+          <figure class="map-unit leader-unit">
+            <img src="images/wingsync_leader_marker.gif" alt="Rohan leader Ride Marker">
+            <figcaption><strong>Rohan (Leader)</strong><span>42 km/h</span></figcaption>
+          </figure>
+          <figure class="map-unit rider-one">
+            <img src="images/leader_bike_marker.png" alt="Arjun motorcycle Ride Marker">
+            <figcaption><strong>Arjun</strong><span>46 km/h</span></figcaption>
+          </figure>
+          <figure class="map-unit rider-two">
+            <img src="images/leader_car_marker.png" alt="Vikram car Ride Marker">
+            <figcaption><strong>Vikram</strong><span>51 km/h</span></figcaption>
+          </figure>
+          <figure class="map-unit lost-rider">
+            <img src="images/wingsync_rider_marker_lost.png" alt="Manoj OOF Lost Ride Marker">
+            <figcaption><strong>Manoj</strong><span class="status-ok">44 km/h</span><span class="status-lost">LOST</span></figcaption>
+          </figure>
+
+          <div class="legend-card" aria-label="Marker legend">
+            <span><i class="dot leader-dot"></i>Leader</span>
+            <span><i class="dot blue-dot"></i>Rider</span>
+            <span><i class="dot green-dot"></i>Rider</span>
+            <span><i class="dot lost-dot"></i>OOF / Lost</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Overview</p>
-        <h2>Built around real ride coordination</h2>
+    <section id="features" class="shell feature-row" aria-label="WingRadar features">
+      <article class="feature-card">
+        <span class="feature-symbol">☷</span>
+        <h3>Real-time Awareness</h3>
+        <p>See every rider live with formation and status.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-symbol">↱</span>
+        <h3>Shared Navigation</h3>
+        <p>Leader sets the route. Everyone stays on track.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-symbol">◒</span>
+        <h3>Detour Intelligence</h3>
+        <p>Detects off-route and suggests better options.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-symbol">◎</span>
+        <h3>Background Tracking</h3>
+        <p>Ride stays synced even when app is minimized.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-symbol green">●</span>
+        <h3>Ride Markers</h3>
+        <p>Choose your ride identity: Classic, Motorcycle or Car.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-symbol">↺</span>
+        <h3>Ride History</h3>
+        <p>Review and replay your previous adventures.</p>
+      </article>
+    </section>
+
+    <section id="markers" class="shell strip-section marker-strip">
+      <div class="strip-intro">
+        <h2>Ride Markers</h2>
+        <p>Choose how you appear on the live map.</p>
+        <a class="mini-action" href="#preview">See It In Action</a>
       </div>
-      <div class="grid three">
-        <article class="card">
-          <h3>Live group context</h3>
-          <p>Riders can create or join active ride sessions using ride codes and understand where the active squad is during a ride.</p>
+      <div class="marker-road" aria-label="Ride Marker examples aligned on road">
+        <span class="straight-road"></span>
+        <figure class="marker-example classic-marker">
+          <figcaption class="top-label">Classic</figcaption>
+          <img src="images/wingsync_leader_marker.gif" alt="Classic Ride Marker">
+          <figcaption><strong>Rohan</strong><span>42 km/h</span></figcaption>
+        </figure>
+        <figure class="marker-example motorcycle-marker">
+          <figcaption class="top-label">Motorcycle</figcaption>
+          <img src="images/leader_bike_marker.png" alt="Motorcycle Ride Marker">
+          <figcaption><strong>Arjun</strong><span>46 km/h</span></figcaption>
+        </figure>
+        <figure class="marker-example car-marker">
+          <figcaption class="top-label">Car</figcaption>
+          <img src="images/leader_car_marker.png" alt="Car Ride Marker">
+          <figcaption><strong>Vikram</strong><span>51 km/h</span></figcaption>
+        </figure>
+        <figure class="marker-example oof-marker">
+          <figcaption class="top-label">OOF / Lost</figcaption>
+          <img src="images/wingsync_rider_marker_lost.png" alt="OOF Lost Ride Marker">
+          <figcaption><strong>Manoj</strong><span>Offline</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="how" class="shell strip-section how-strip">
+      <div class="strip-intro">
+        <h2>How It Works</h2>
+        <p>Four simple steps to a smarter group ride.</p>
+      </div>
+      <div class="steps-row">
+        <article class="step-card">
+          <span>1</span>
+          <h3>Sign In</h3>
+          <p>Riders sign in and get ready to ride.</p>
         </article>
-        <article class="card">
-          <h3>Leader and rider roles</h3>
-          <p>WingRadar supports coordination between the ride leader and participating riders so the group has a shared operational view.</p>
+        <article class="step-card">
+          <span>2</span>
+          <h3>Create or Join</h3>
+          <p>Leader creates a ride. Riders join with Ride ID.</p>
         </article>
-        <article class="card">
-          <h3>Privacy-aware operation</h3>
-          <p>Active ride-only location sharing is intended only for riders participating in the same ride session.</p>
+        <article class="step-card">
+          <span>3</span>
+          <h3>Coordinate Live</h3>
+          <p>Stay aware, follow the route and keep the formation.</p>
+        </article>
+        <article class="step-card">
+          <span>4</span>
+          <h3>Review Later</h3>
+          <p>Check ride history and replay your journey.</p>
         </article>
       </div>
     </section>
 
-    <section class="section split">
-      <div>
-        <p class="eyebrow">Safety first</p>
-        <h2>Assistance, not a substitute for awareness</h2>
+    <section id="use-cases" class="shell strip-section use-case-strip">
+      <div class="strip-intro">
+        <h2>Built for Every Group Ride</h2>
+        <p>From weekend rides to long-haul adventures.</p>
       </div>
-      <p>WingRadar is a coordination aid. Riders remain responsible for safe riding, traffic laws, road conditions, group etiquette, and their own decisions. Do not use a phone while riding or driving.</p>
+      <div class="use-case-grid">
+        <article><span class="placeholder-symbol"></span><strong>Motorcycle Clubs</strong></article>
+        <article><span class="placeholder-symbol"></span><strong>Weekend Rides</strong></article>
+        <article><span class="placeholder-symbol"></span><strong>Adventure Touring</strong></article>
+        <article><span class="placeholder-symbol"></span><strong>Road Trips</strong></article>
+        <article><span class="placeholder-symbol"></span><strong>Charity Rides</strong></article>
+        <article><span class="placeholder-symbol"></span><strong>Group Expeditions</strong></article>
+      </div>
+    </section>
+
+    <section id="preview" class="shell strip-section preview-strip">
+      <div class="strip-intro preview-intro">
+        <h2>Live Ride Preview</h2>
+        <p>See the convoy in action with live positions, route and squad details.</p>
+      </div>
+      <div class="phone-frame" aria-label="WingRadar dark-mode map preview">
+        <div class="phone-speaker"></div>
+        <div class="preview-map">
+          <span class="preview-road"></span>
+          <span class="preview-route"></span>
+          <span class="preview-route offshoot"></span>
+          <span class="preview-arrow a1">›</span>
+          <span class="preview-arrow a2">›</span>
+          <span class="preview-arrow a3">›</span>
+          <div class="preview-chip">
+            <strong>RID 483927</strong>
+            <span>Ridge Loop</span>
+          </div>
+          <img class="preview-marker pm-leader" src="images/wingsync_leader_marker.gif" alt="Leader marker preview">
+          <img class="preview-marker pm-bike" src="images/leader_bike_marker.png" alt="Motorcycle marker preview">
+          <img class="preview-marker pm-car" src="images/leader_car_marker.png" alt="Car marker preview">
+          <img class="preview-marker pm-lost" src="images/wingsync_rider_marker_lost.png" alt="OOF marker preview">
+          <aside class="squad-panel">
+            <h3>Squad (4)</h3>
+            <p><strong>Rohan (Leader)</strong><span>42 km/h<br>0 m</span></p>
+            <p><strong>Arjun</strong><span>46 km/h<br>120 m</span></p>
+            <p><strong>Vikram</strong><span>51 km/h<br>260 m</span></p>
+            <p class="offline"><strong>Manoj (OOF)</strong><span>Offline</span></p>
+            <footer>Radius: 300 m · Active: 3 · OOF: 1</footer>
+          </aside>
+          <div class="ride-summary">
+            <span><em>Remaining</em><strong>52 km</strong></span>
+            <span><em>ETA</em><strong>1 h 08 m</strong></span>
+            <span><em>Done</em><strong>18%</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="shell strip-section download-strip">
+      <div class="download-copy">
+        <h2>Get WingRadar</h2>
+        <p>Download now and experience real-time convoy coordination.</p>
+      </div>
+      <a class="play-badge" href="#" aria-label="Google Play placeholder link">
+        <span class="play-triangle"></span>
+        <span><small>GET IT ON</small><strong>Google Play</strong></span>
+      </a>
+      <div class="qr-block">
+        <div class="scan-box">SCAN<br>ME</div>
+        <p><strong>Scan to Download</strong><span>QR coming soon</span></p>
+      </div>
+      <ul class="download-checks" aria-label="WingRadar capabilities">
+        <li>Live convoy tracking</li>
+        <li>Shared navigation</li>
+        <li>Detour intelligence</li>
+        <li>Background ride sync</li>
+        <li>Ride markers</li>
+        <li>Ride history</li>
+      </ul>
+    </section>
+
+    <section id="faq" class="shell strip-section faq-strip">
+      <h2>FAQ</h2>
+      <div class="faq-grid">
+        <details>
+          <summary>Do I need mobile data to use WingRadar?</summary>
+          <p>Yes. Active ride visibility works best with a stable mobile connection.</p>
+        </details>
+        <details>
+          <summary>Can I use WingRadar for car convoys?</summary>
+          <p>Yes. WingRadar supports motorcycle, car, and mixed convoy coordination.</p>
+        </details>
+        <details>
+          <summary>How many riders can join a ride?</summary>
+          <p>Ride size may vary as WingRadar evolves. Keep groups practical and easy to coordinate.</p>
+        </details>
+        <details>
+          <summary>How is my location used?</summary>
+          <p>Location is intended for active ride coordination with participants in the same ride.</p>
+        </details>
+        <details>
+          <summary>Can I review my past rides?</summary>
+          <p>Ride history helps you review previous routes and group context.</p>
+        </details>
+        <details>
+          <summary>Which platforms is WingRadar available on?</summary>
+          <p>Android release access is coming soon. Availability may vary as the product develops.</p>
+        </details>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 WingRadar. All rights reserved.</p>
-    <nav aria-label="Footer navigation">
+  <footer class="site-footer shell">
+    <div class="footer-brand">
+      <span class="footer-lockup">
+        <img class="brand-icon" src="images/wing_sync_app_icon.png" alt="" aria-hidden="true">
+        <span>
+          <img class="brand-logo" src="images/wing_sync_text_logo.png" alt="WingRadar">
+          <em>RIDE TOGETHER. STAY TOGETHER.</em>
+        </span>
+      </span>
+      <p>Convoy coordination platform for every active ride.</p>
+    </div>
+    <nav aria-label="Company links">
+      <h3>Company</h3>
+      <a href="#why">About WingRadar</a>
+      <a href="mailto:support@ridewingsync.com">Contact Us</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <nav aria-label="Legal links">
+      <h3>Legal</h3>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms.html">Terms</a>
-      <a href="support.html">Support</a>
       <a href="delete-account.html">Delete Account</a>
     </nav>
+    <nav aria-label="Resource links">
+      <h3>Resources</h3>
+      <a href="support.html">Help Center</a>
+      <a href="terms.html">Safety Guide</a>
+    </nav>
+    <div class="socials" aria-label="Social placeholders">
+      <h3>Stay Connected</h3>
+      <span>f</span>
+      <span>◎</span>
+      <span>▶</span>
+      <span>✉</span>
+    </div>
+    <p class="copyright">© 2025 WingRadar. All rights reserved.</p>
   </footer>
 </body>
 </html>
