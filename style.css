@@ -876,6 +876,7 @@ p {
 }
 
 .use-case-grid article {
+  position: relative;
   display: grid;
   place-items: center;
   gap: 0.65rem;
@@ -885,6 +886,37 @@ p {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.025);
   text-align: center;
+  overflow: hidden;
+}
+
+.use-case-grid article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(2, 7, 15, 0.16), rgba(2, 7, 15, 0.68));
+  pointer-events: none;
+}
+
+.use-case-grid article img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.use-case-grid article:hover img {
+  transform: scale(1.05);
+}
+
+.use-case-grid article strong {
+  position: relative;
+  z-index: 2;
 }
 
 .placeholder-symbol {
