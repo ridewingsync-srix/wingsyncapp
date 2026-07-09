@@ -24,6 +24,16 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 900px) {
+  section[id] {
+    scroll-margin-top: 120px;
+  }
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
