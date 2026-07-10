@@ -523,42 +523,34 @@ p {
   transform: translate(-50%, -18%);
 }
 
+/* Convoy group: ensure leader stays ahead, riders follow, OOF remains last */
 .leader-unit,
 .rider-one,
 .rider-two {
   animation: convoyRouteLoop 18s linear infinite;
 }
 
-.rider-one {
-  animation-delay: -12s;
-}
-
-.leader-unit {
-  animation-delay: -8s;
-}
-
-.rider-two {
-  animation-delay: -4s;
-}
+/* Ordering: larger negative delay = further along the path (ahead).
+   Set leader most advanced, then Rohan, then Vikram, then Manoj (OOF last).
+*/
+.leader-unit { animation-delay: -12s; }
+.rider-one   { animation-delay: -8s;  }
+.rider-two   { animation-delay: -4s;  }
+/* lost-rider (Manoj) remains last with minimal/zero negative delay */
+.lost-rider  { animation: convoyRouteLoop 18s linear infinite; animation-delay: 0s; }
 
 .leader-unit img,
 .rider-one img,
-.rider-two img {
+.rider-two img,
+.lost-rider img {
   animation: markerRouteHeading 18s linear infinite;
   transform-origin: 50% 18%;
 }
-
-.rider-one img {
-  animation-delay: -12s;
-}
-
-.leader-unit img {
-  animation-delay: -8s;
-}
-
-.rider-two img {
-  animation-delay: -4s;
-}
+/* Match heading animation delays with convoy order so rotation follows progression */
+.leader-unit img { animation-delay: -12s; }
+.rider-one img   { animation-delay: -8s;  }
+.rider-two img   { animation-delay: -4s;  }
+.lost-rider img  { animation-delay: 0s;   }
 
 .map-unit img {
   display: block;
@@ -776,32 +768,40 @@ p {
   transform: translateY(-50%);
 }
 
-.marker-example {
-  position: absolute;
-  top: 50%;
+.marker-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+  width: 100%;
+}
+
+.marker-groups .marker-example {
+  position: relative;
   display: grid;
   justify-items: center;
-  gap: 0.18rem;
-  width: 8rem;
+  gap: 0.45rem;
   margin: 0;
-  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
-.classic-marker {
-  left: 18%;
+.pair {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.motorcycle-marker {
-  left: 42%;
-}
+.pair.single { justify-content: center; }
 
-.car-marker {
-  left: 65%;
-}
+.pair-item { display: grid; gap: 0.25rem; align-items: center; }
+.pair-item img { display: block; max-width: 5.2rem; height: auto; }
+.pair-label { color: var(--muted); font-size: 0.82rem; font-weight:700; text-align:center; }
 
-.oof-marker {
-  left: 88%;
-}
+.oof-single .oof-img,
+.oof-img { filter: grayscale(1) contrast(1.05) brightness(0.78); }
+
+.marker-note { margin-top: 0.4rem; color: var(--muted); font-size: 0.82rem; text-align:center; }
 
 .marker-example img {
   display: block;
