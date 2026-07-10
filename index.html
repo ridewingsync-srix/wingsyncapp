@@ -69,19 +69,19 @@
           </div>
 
           <figure class="map-unit leader-unit">
-            <img src="images/wingsync_leader_marker.gif" alt="Rohan leader Ride Marker">
-            <figcaption><strong>Rohan (Leader)</strong><span>42 km/h</span></figcaption>
+            <img src="images/leader_bike_marker.png" alt="Arjun (Leader) Motorcycle Ride Marker">
+            <figcaption><strong>Arjun (Leader)</strong><span>46 km/h</span></figcaption>
           </figure>
           <figure class="map-unit rider-one">
-            <img src="images/leader_bike_marker.png" alt="Arjun motorcycle Ride Marker">
-            <figcaption><strong>Arjun</strong><span>46 km/h</span></figcaption>
+            <img src="images/wingsync_rider_marker.gif" alt="Rohan Classic Rider">
+            <figcaption><strong>Rohan</strong><span>42 km/h</span></figcaption>
           </figure>
           <figure class="map-unit rider-two">
-            <img src="images/leader_car_marker.png" alt="Vikram car Ride Marker">
+            <img src="images/rider_car_marker.png" alt="Vikram Car Rider">
             <figcaption><strong>Vikram</strong><span>51 km/h</span></figcaption>
           </figure>
-          <figure class="map-unit lost-rider">
-            <img src="images/wingsync_rider_marker_lost.png" alt="Manoj OOF Lost Ride Marker">
+          <figure class="map-unit lost-rider oof-marker">
+            <img src="images/wingsync_rider_marker.gif" alt="Manoj OOF Rider Marker">
             <figcaption><strong>Manoj</strong><span class="status-ok">44 km/h</span><span class="status-lost">LOST</span></figcaption>
           </figure>
 
@@ -136,25 +136,78 @@
       </div>
       <div class="marker-road" aria-label="Ride Marker examples aligned on road">
         <span class="straight-road"></span>
+
         <figure class="marker-example classic-marker">
           <figcaption class="top-label">Classic</figcaption>
-          <img src="images/wingsync_leader_marker.gif" alt="Classic Ride Marker">
-          <figcaption><strong>Rohan</strong><span>42 km/h</span></figcaption>
+          <div class="classic-pair">
+            <div>
+              <img src="images/wingsync_leader_marker.gif" alt="Classic Leader">
+              <figcaption>Leader</figcaption>
+            </div>
+            <div>
+              <img src="images/wingsync_rider_marker.gif" alt="Classic Rider">
+              <figcaption>Rider</figcaption>
+            </div>
+          </div>
         </figure>
+
         <figure class="marker-example motorcycle-marker">
           <figcaption class="top-label">Motorcycle</figcaption>
-          <img src="images/leader_bike_marker.png" alt="Motorcycle Ride Marker">
-          <figcaption><strong>Arjun</strong><span>46 km/h</span></figcaption>
+          <div class="classic-pair">
+            <div>
+              <img src="images/leader_bike_marker.png" alt="Motorcycle Leader">
+              <figcaption>Leader</figcaption>
+            </div>
+            <div>
+              <img src="images/rider_bike_marker.png" alt="Motorcycle Rider">
+              <figcaption>Rider</figcaption>
+            </div>
+          </div>
         </figure>
+
         <figure class="marker-example car-marker">
           <figcaption class="top-label">Car</figcaption>
-          <img src="images/leader_car_marker.png" alt="Car Ride Marker">
-          <figcaption><strong>Vikram</strong><span>51 km/h</span></figcaption>
+          <div class="classic-pair">
+            <div>
+              <img src="images/leader_car_marker.png" alt="Car Leader">
+              <figcaption>Leader</figcaption>
+            </div>
+            <div>
+              <img src="images/rider_car_marker.png" alt="Car Rider">
+              <figcaption>Rider</figcaption>
+            </div>
+          </div>
         </figure>
+
         <figure class="marker-example oof-marker">
           <figcaption class="top-label">OOF / Lost</figcaption>
-          <img src="images/wingsync_rider_marker_lost.png" alt="OOF Lost Ride Marker">
-          <figcaption><strong>Manoj</strong><span>Offline</span></figcaption>
+          <div class="oof-grid">
+            <div>
+              <img src="images/wingsync_leader_marker.gif" alt="Classic Leader OOF" class="oof-img">
+              <figcaption>Classic Leader</figcaption>
+            </div>
+            <div>
+              <img src="images/wingsync_rider_marker.gif" alt="Classic Rider OOF" class="oof-img">
+              <figcaption>Classic Rider</figcaption>
+            </div>
+            <div>
+              <img src="images/leader_bike_marker.png" alt="Motorcycle Leader OOF" class="oof-img">
+              <figcaption>Motorcycle Leader</figcaption>
+            </div>
+            <div>
+              <img src="images/rider_bike_marker.png" alt="Motorcycle Rider OOF" class="oof-img">
+              <figcaption>Motorcycle Rider</figcaption>
+            </div>
+            <div>
+              <img src="images/leader_car_marker.png" alt="Car Leader OOF" class="oof-img">
+              <figcaption>Car Leader</figcaption>
+            </div>
+            <div>
+              <img src="images/rider_car_marker.png" alt="Car Rider OOF" class="oof-img">
+              <figcaption>Car Rider</figcaption>
+            </div>
+          </div>
+          <figcaption class="marker-note">Offline / Out Of Formation</figcaption>
         </figure>
       </div>
     </section>
@@ -221,10 +274,10 @@
             <strong>RID 483927</strong>
             <span>Ridge Loop</span>
           </div>
-          <img class="preview-marker pm-leader" src="images/wingsync_leader_marker.gif" alt="Leader marker preview">
-          <img class="preview-marker pm-bike" src="images/leader_bike_marker.png" alt="Motorcycle marker preview">
-          <img class="preview-marker pm-car" src="images/leader_car_marker.png" alt="Car marker preview">
-          <img class="preview-marker pm-lost" src="images/wingsync_rider_marker_lost.png" alt="OOF marker preview">
+          <img class="preview-marker pm-leader" src="images/leader_bike_marker.png" alt="Leader marker preview">
+          <img class="preview-marker pm-bike" src="images/wingsync_rider_marker.gif" alt="Motorcycle rider marker preview">
+          <img class="preview-marker pm-car" src="images/rider_car_marker.png" alt="Car rider marker preview">
+          <img class="preview-marker pm-lost" src="images/wingsync_rider_marker.gif" alt="OOF marker preview">
           <aside class="squad-panel">
             <h3>Squad (4)</h3>
             <p><strong>Rohan (Leader)</strong><span>42 km/h<br>0 m</span></p>

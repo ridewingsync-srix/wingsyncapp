@@ -1100,6 +1100,50 @@ p {
   height: 3.1rem;
 }
 
+/* Preview markers reuse hero animation timing and heading to mirror the hero map */
+.preview-map .pm-leader,
+.preview-map .pm-bike,
+.preview-map .pm-car {
+  animation: convoyRouteLoop 18s linear infinite;
+}
+.preview-map .pm-leader { animation-delay: -8s; }
+.preview-map .pm-bike { animation-delay: -12s; }
+.preview-map .pm-car { animation-delay: -4s; }
+
+.preview-marker {
+  animation: markerRouteHeading 18s linear infinite;
+  transform-origin: 50% 18%;
+}
+.preview-marker.pm-leader { animation-delay: -8s; }
+.preview-marker.pm-bike { animation-delay: -12s; }
+.preview-marker.pm-car { animation-delay: -4s; }
+
+/* OOF preview and marker examples: desaturate via CSS */
+.pm-lost,
+.oof-img,
+.oof-marker img {
+  filter: grayscale(1) contrast(1.05) brightness(0.78) drop-shadow(0 0 10px rgba(255,255,255,0.06));
+}
+
+/* Marker examples layout tweaks for dual images */
+.classic-pair,
+.oof-grid {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.classic-pair > div,
+.oof-grid > div {
+  display: grid;
+  gap: 0.25rem;
+  align-items: center;
+}
+.marker-example figcaption.marker-note {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .squad-panel {
   position: absolute;
   right: 1rem;
