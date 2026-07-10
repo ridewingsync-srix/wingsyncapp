@@ -750,63 +750,156 @@ p {
   font-size: 0.86rem;
 }
 
-.marker-road {
-  position: relative;
-  min-height: 8.6rem;
+.marker-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-top: 0.55rem;
+  padding: 1rem;
 }
 
-.straight-road {
-  position: absolute;
-  left: 2%;
-  right: 2%;
-  top: 50%;
-  height: 1.5rem;
-  border-radius: 999px;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 1.4rem, rgba(255, 255, 255, 0.62) 1.4rem 2.2rem, transparent 2.2rem 3.2rem),
-    rgba(23, 45, 63, 0.75);
-  transform: translateY(-50%);
+.marker-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0.75rem;
 }
 
 .marker-groups {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  align-items: start;
-  width: 100%;
+  display: contents;
 }
 
 .marker-groups .marker-example {
-  position: relative;
   display: grid;
+  grid-template-rows: auto 5.75rem auto;
   justify-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   margin: 0;
+  padding: 0.85rem 0.55rem 0.7rem;
   width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(111, 174, 218, 0.16);
+  border-radius: 0.9rem;
+  background: rgba(8, 25, 40, 0.46);
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.marker-groups .marker-example .top-label {
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.25;
 }
 
 .pair {
-  display: flex;
-  gap: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(3.25rem, 1fr));
+  gap: 0.35rem;
   align-items: center;
+  width: 100%;
+}
+
+.pair.single {
+  grid-template-columns: minmax(3.25rem, 1fr);
   justify-content: center;
 }
 
-.pair.single { justify-content: center; }
+.pair-item {
+  display: grid;
+  grid-template-rows: 3.75rem 1rem;
+  gap: 0.2rem;
+  place-items: center;
+  min-width: 0;
+}
 
-.pair-item { display: grid; gap: 0.25rem; align-items: center; }
-.pair-item img { display: block; max-width: 5.2rem; height: auto; }
-.pair-label { color: var(--muted); font-size: 0.82rem; font-weight:700; text-align:center; }
+.pair-item img {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(51, 200, 255, 0.2));
+}
+
+.marker-example:nth-child(2) .pair-item img {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.marker-example:nth-child(3) .pair-item img {
+  width: 4.1rem;
+  height: 4.1rem;
+}
+
+.oof-single .pair-item img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.pair-label {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 1rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
 
 .oof-single .oof-img,
-.oof-img { filter: grayscale(1) contrast(1.05) brightness(0.78); }
+.oof-img {
+  filter: grayscale(1) contrast(1.05) brightness(0.78);
+}
 
-.marker-note { margin-top: 0.4rem; color: var(--muted); font-size: 0.82rem; text-align:center; }
+.marker-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1rem;
+  text-align: center;
+}
 
-.marker-example img {
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 0 16px rgba(51, 200, 255, 0.28));
+@media (max-width: 1199px) {
+  .marker-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .marker-intro {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .marker-groups {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .marker-strip {
+    padding: 0.75rem;
+  }
+
+  .marker-groups .marker-example {
+    padding-inline: 0.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .marker-groups .marker-example:hover {
+    transform: translateY(-2px);
+    border-color: rgba(51, 200, 255, 0.34);
+  }
+}
+
+@media (max-width: 419px) {
+  .marker-groups {
+    grid-template-columns: 1fr;
+  }
 }
 
 .classic-marker img {
@@ -827,15 +920,6 @@ p {
 .oof-marker img {
   width: 3.7rem;
   height: 3.7rem;
-}
-
-.marker-example figcaption:not(.top-label) {
-  display: grid;
-  min-width: 5.8rem;
-  padding: 0.42rem 0.5rem;
-  border-radius: 8px;
-  background: rgba(4, 12, 22, 0.82);
-  text-align: center;
 }
 
 .top-label {
@@ -1138,12 +1222,6 @@ p {
   gap: 0.25rem;
   align-items: center;
 }
-.marker-example figcaption.marker-note {
-  margin-top: 0.45rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
 .squad-panel {
   position: absolute;
   right: 1rem;
@@ -1788,48 +1866,6 @@ p {
 
   .feature-row {
     grid-template-columns: 1fr;
-  }
-
-  .marker-road {
-    min-height: 21rem;
-  }
-
-  .straight-road {
-    left: 50%;
-    top: 7%;
-    bottom: 7%;
-    right: auto;
-    width: 1.5rem;
-    height: auto;
-    transform: translateX(-50%);
-  }
-
-  .marker-example {
-    width: 7rem;
-  }
-
-  .classic-marker {
-    left: 50%;
-    top: 18%;
-  }
-
-  .motorcycle-marker {
-    left: 50%;
-    top: 39%;
-  }
-
-  .car-marker {
-    left: 50%;
-    top: 60%;
-  }
-
-  .oof-marker {
-    left: 50%;
-    top: 81%;
-  }
-
-  .top-label {
-    display: none;
   }
 
   .steps-row,
