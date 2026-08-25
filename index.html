@@ -6,7 +6,7 @@
   <title>WingRadar | Ride Together. Stay Together.</title>
   <meta name="description" content="WingRadar helps ride leaders and participants stay connected during active group rides with live rider positions, shared route context, formation awareness, and POI and SOS alerts built for the road.">
   <link rel="icon" href="images/wing_sync_app_icon.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=20260709-arrow-heading">
+  <link rel="stylesheet" href="style.css?v=20260826-download-qr">
 </head>
 <body>
   <header class="site-header">
@@ -25,7 +25,13 @@
       <a href="#use-cases">Use Cases</a>
       <a href="#preview">App Preview</a>
     </nav>
-    <a class="download-button" href="https://play.google.com/store/apps/details?id=com.wingsyncride" target="_blank" rel="noopener noreferrer">Download App</a>
+    <span class="download-qr download-qr-header">
+      <a class="download-button" href="https://play.google.com/store/apps/details?id=com.wingsyncride" target="_blank" rel="noopener noreferrer">Download App</a>
+      <span class="qr-popover" aria-hidden="true">
+        <img src="images/WingRadar_PlayStore_QR.png" alt="">
+        <span>Scan to download WingRadar</span>
+      </span>
+    </span>
   </header>
 
   <main id="top">
@@ -252,10 +258,13 @@
         <h2>Get WingRadar</h2>
         <p>Download now and experience real-time convoy coordination.</p>
       </div>
-      <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.wingsyncride" target="_blank" rel="noopener noreferrer" aria-label="Download WingRadar on Google Play">
-        <span class="play-triangle"></span>
-        <span><small>GET IT ON</small><strong>Google Play</strong></span>
-      </a>
+      <span class="download-qr download-qr-footer">
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.wingsyncride" target="_blank" rel="noopener noreferrer" aria-label="Download WingRadar on Google Play">
+          <span class="play-triangle"></span>
+          <span><small>GET IT ON</small><strong>Google Play</strong></span>
+        </a>
+        <img class="download-qr-visible" src="images/WingRadar_PlayStore_QR.png" alt="Scan to download WingRadar from Google Play">
+      </span>
       <ul class="download-checks" aria-label="WingRadar capabilities">
         <li>Live convoy tracking</li>
         <li>Shared navigation</li>

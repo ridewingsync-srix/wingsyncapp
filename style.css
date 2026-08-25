@@ -170,6 +170,69 @@ img {
   padding: 0.65rem 1.25rem;
 }
 
+.download-qr {
+  position: relative;
+  display: inline-flex;
+}
+
+.qr-popover {
+  position: absolute;
+  left: 50%;
+  z-index: 30;
+  display: grid;
+  width: 12rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(116, 158, 196, 0.38);
+  border-radius: 0.8rem;
+  background: #fff;
+  color: #071422;
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.45rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.qr-popover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.45rem;
+}
+
+.download-qr-header .qr-popover {
+  top: calc(100% + 0.65rem);
+  right: 0;
+  left: auto;
+  transform: translateY(0.45rem);
+}
+
+.download-qr-header:hover .qr-popover,
+.download-qr-header:focus-within .qr-popover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.download-qr-footer {
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.download-qr-visible {
+  display: block;
+  width: 4.9rem;
+  height: 4.9rem;
+  flex: 0 0 auto;
+  padding: 0.2rem;
+  border-radius: 0.45rem;
+  background: #fff;
+  object-fit: contain;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.98fr) minmax(520px, 1.3fr);
@@ -1520,6 +1583,28 @@ p {
 
   .download-button {
     width: 100%;
+  }
+
+  .download-qr {
+    display: flex;
+    width: 100%;
+  }
+
+  .download-qr-footer {
+    gap: 0.5rem;
+  }
+
+  .download-qr-footer .play-badge {
+    flex: 1 1 auto;
+  }
+
+  .download-qr-visible {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .qr-popover {
+    display: none;
   }
 
   .brand-logo {
