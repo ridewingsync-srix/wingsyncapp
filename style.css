@@ -1049,242 +1049,52 @@ p {
   grid-template-columns: 9.6rem 1fr;
 }
 
-.phone-frame {
-  position: relative;
+.preview-video-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 20rem;
-  padding: 0.58rem;
-  border-radius: 2rem;
-  background: #020711;
-}
-
-.phone-speaker {
-  position: absolute;
-  left: 0.72rem;
-  top: 46%;
-  z-index: 5;
-  width: 0.7rem;
-  height: 3.2rem;
-  border-radius: 999px;
-  background: #000;
-}
-
-.preview-map {
-  position: absolute;
-  inset: 0.58rem;
-  overflow: hidden;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
   border-radius: 1.5rem;
   background:
-    radial-gradient(circle at 36% 46%, rgba(51, 200, 255, 0.16), transparent 12rem),
-    linear-gradient(35deg, transparent 0 48%, rgba(104, 160, 190, 0.08) 48% 49%, transparent 49%),
-    #071524;
-  background-size: auto, 7rem 7rem, auto;
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 42%),
+    var(--panel);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.preview-map::before {
-  content: "";
+.ride-video {
+  display: block;
+  width: min(100%, 980px);
+  max-height: 68vh;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid rgba(116, 158, 196, 0.3);
+  border-radius: 1rem;
+  background: #000;
+  transform: rotate(0deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
 }
 
-.preview-road,
-.preview-route {
-  position: absolute;
-  left: 8%;
-  top: 55%;
-  width: 42%;
-  height: 1.25rem;
-  border-radius: 999px;
-  transform: rotate(-14deg);
-}
+@media (max-width: 680px) {
+  .preview-video-wrap {
+    min-height: 0;
+    padding: 0.35rem;
+  }
 
-.preview-road {
-  background: rgba(31, 58, 78, 0.88);
-}
-
-.preview-route {
-  height: 0.3rem;
-  margin-top: 0.46rem;
-  background: linear-gradient(90deg, var(--cyan), var(--blue));
-  box-shadow: 0 0 18px rgba(51, 200, 255, 0.35);
-}
-
-.preview-route.offshoot {
-  left: 43%;
-  top: 48%;
-  width: 21%;
-  background: linear-gradient(90deg, var(--blue), var(--cyan));
-  transform: rotate(36deg);
-}
-
-.preview-arrow {
-  position: absolute;
-  z-index: 4;
-  color: var(--cyan);
-  font-weight: 900;
-}
-
-.a1 {
-  left: 27%;
-  top: 48%;
-  transform: rotate(-14deg);
-}
-
-.a2 {
-  left: 44%;
-  top: 41%;
-  transform: rotate(-14deg);
-}
-
-.a3 {
-  left: 54%;
-  top: 48%;
-  color: var(--green);
-  transform: rotate(36deg);
-}
-
-.preview-chip {
-  position: absolute;
-  left: 1.8rem;
-  top: 1.2rem;
-  z-index: 5;
-  display: grid;
-  padding: 0.62rem 0.75rem;
-}
-
-.preview-marker {
-  position: absolute;
-  z-index: 5;
-  object-fit: contain;
-  filter: drop-shadow(0 0 14px rgba(51, 200, 255, 0.3));
-}
-
-.pm-leader {
-  left: 30%;
-  top: 39%;
-  width: 3.7rem;
-  height: 3.7rem;
-}
-
-.pm-bike {
-  left: 43%;
-  top: 32%;
-  width: 2rem;
-  height: 4.5rem;
-}
-
-.pm-car {
-  left: 52%;
-  top: 47%;
-  width: 2.3rem;
-  height: 3.8rem;
-}
-
-.pm-lost {
-  left: 64%;
-  top: 40%;
-  width: 3.1rem;
-  height: 3.1rem;
-}
-
-/* Preview markers reuse hero animation timing and heading to mirror the hero map */
-.preview-map .pm-leader,
-.preview-map .pm-bike,
-.preview-map .pm-car {
-  animation: convoyRouteLoop 18s linear infinite;
-}
-.preview-map .pm-leader { animation-delay: -8s; }
-.preview-map .pm-bike { animation-delay: -12s; }
-.preview-map .pm-car { animation-delay: -4s; }
-
-.preview-marker {
-  animation: markerRouteHeading 18s linear infinite;
-  transform-origin: 50% 18%;
-}
-.preview-marker.pm-leader { animation-delay: -8s; }
-.preview-marker.pm-bike { animation-delay: -12s; }
-.preview-marker.pm-car { animation-delay: -4s; }
-
-/* OOF preview and marker examples: desaturate via CSS */
-.pm-lost,
-.oof-img,
-.oof-marker img {
-  filter: grayscale(1) contrast(1.05) brightness(0.78) drop-shadow(0 0 10px rgba(255,255,255,0.06));
-}
-
-/* Marker examples layout tweaks for dual images */
-.classic-pair,
-.oof-grid {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-}
-.classic-pair > div,
-.oof-grid > div {
-  display: grid;
-  gap: 0.25rem;
-  align-items: center;
-}
-.squad-panel {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 6;
-  width: 15.2rem;
-  padding: 0.75rem;
-}
-
-.squad-panel h3 {
-  margin-bottom: 0.6rem;
-}
-
-.squad-panel p {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.58rem;
-  padding-bottom: 0.58rem;
-  border-bottom: 1px solid rgba(116, 158, 196, 0.16);
-}
-
-.squad-panel strong {
-  color: var(--text);
-  font-size: 0.78rem;
-}
-
-.squad-panel span {
-  text-align: right;
-}
-
-.squad-panel .offline {
-  filter: grayscale(1);
-}
-
-.squad-panel footer {
-  color: var(--muted);
-  font-size: 0.75rem;
-}
-
-.ride-summary {
-  position: absolute;
-  left: 50%;
-  bottom: 1rem;
-  z-index: 6;
-  display: flex;
-  gap: 0.95rem;
-  padding: 0.58rem 0.8rem;
-  transform: translateX(-50%);
-}
-
-.ride-summary span {
-  display: grid;
-  min-width: 4.8rem;
-  text-align: center;
-}
-
-.ride-summary strong {
-  color: var(--text);
+  .ride-video {
+    width: 100%;
+    max-height: 42vh;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.85rem;
+    transform: rotate(0deg);
+    image-rendering: auto;
+  }
 }
 
 .download-strip {
-  grid-template-columns: minmax(10rem, 0.55fr) auto auto 1fr;
+  grid-template-columns: minmax(10rem, 0.55fr) auto 1fr;
 }
 
 .download-copy p {
@@ -1320,34 +1130,6 @@ p {
 
 .play-badge strong {
   font-size: 1.42rem;
-}
-
-.qr-block {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
-.scan-box {
-  display: grid;
-  place-items: center;
-  width: 5rem;
-  height: 5rem;
-  border-style: dashed;
-  color: var(--text);
-  font-weight: 900;
-  line-height: 1.05;
-  text-align: center;
-}
-
-.qr-block p {
-  display: grid;
-  margin: 0;
-}
-
-.qr-block span {
-  color: var(--muted);
-  font-size: 0.78rem;
 }
 
 .download-checks {
